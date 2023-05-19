@@ -121,4 +121,4 @@ switch.Activated:Connect(function()
     end
 end)
 
-textToNotifier("Script ativado com sucesso", 5)
+textToNotifier("Script carregado com sucesso", 5)
