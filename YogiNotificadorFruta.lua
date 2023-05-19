@@ -69,8 +69,11 @@ local function enableNotifier(fruit)
 
     local fruitAlive = true
 
+    -- Fruit hasn't a position but it's child named "Fruit" has
+    fruitChild = fruit:FindFirstChild("Fruit")
+	
     while fruitAlive and workspaceConnection do
-        notifier.Text = fruitName .. " encontrada à: " .. math.floor(((player.Character.UpperTorso.Position - fruit:FindFirstChild("Fruit").Position).Magnitude) * 0.28) .. "m"
+        notifier.Text = fruitName .. " encontrada à: " .. math.floor(((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude) * 0.28) .. "m"
 
         wait(0.5)
 
