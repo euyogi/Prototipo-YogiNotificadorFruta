@@ -29,7 +29,7 @@ local function createSwitch()
 	return switch
 end
 
--- Creates the switch to turn the ESP on/off
+-- Creates the switch to turn the notifier on/off
 local switch = createSwitch()
 
 -- Creates the notifier
@@ -86,7 +86,7 @@ local function enableNotifier(fruit)
     end
 end
 
--- Enables/disables the ESP when ESP switch is clicked
+-- Enables/disables the notifier when notifier switch is clicked
 switch.Activated:Connect(function()
     
 	-- Enables/disables the workspace connection listening for children added 
@@ -98,7 +98,8 @@ switch.Activated:Connect(function()
 
 	else -- if the connection does not exist
 		switch.TextLabel.Text = "Notificador (ON)"
-
+		
+			textToNotifier("Notificador ativado com sucesso", 3)
 		-- Connect the event and start the listening
 		workspaceConnection = workspace.ChildAdded:Connect (function(child)
 			-- If the added child is a fruit enables the notifier
