@@ -17,7 +17,7 @@ em breve...
 
 <h2>Como utilizar:</h2>
 
-Utilizando um Roblox Executor como o <a href="https://evonexecutor.net/">Evon</a> (PC) ou o <a href="https://fluxteam.net/">Fluxus</a> (Mobile/PC) você pode colar o arquivo na pasta scripts do programa utilizado ou copiar o texto do arquivo e colar no seu executor e então, entre no jogo, injete o executor e inicie o script.
+Utilizando um Roblox Executor como o <a href="https://sakpot.com/evon-executor/">Evon</a> (PC) ou o <a href="https://fluxteam.net/">Fluxus</a> (Mobile/PC) você pode colar o arquivo na pasta scripts do programa utilizado ou copiar o texto do arquivo e colar no seu executor e então, entre no jogo, injete o executor e inicie o script.
 
 <b>Não me responsabilizo pelas consequências ao usuário, devido ao uso do script junto a um injetor em jogos do Roblox que não sejam de sua autoria. Visto que, pode não ser permitido pela empresa/criador.</b>
 
