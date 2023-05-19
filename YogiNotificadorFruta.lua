@@ -70,7 +70,7 @@ local function enableNotifier(fruit)
     local fruitAlive = true
 
     while fruitAlive and workspaceConnection do
-        notifier.Text = fruitName .. " encontrada à: " .. math.floor(((player.Character.UpperTorso.Position - fruit.Position).Magnitude) * 0.28) .. "m"
+        notifier.Text = fruitName .. " encontrada à: " .. math.floor(((player.Character.UpperTorso.Position - fruit:FindFirstChild("Fruit").Position).Magnitude) * 0.28) .. "m"
 
         wait(0.5)
 
