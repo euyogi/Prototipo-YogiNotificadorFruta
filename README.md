@@ -11,9 +11,11 @@ Basicamente permite ao jogador localizar frutas facilmente, mesma função do <a
 * Segue o mesmo design do jogo, tanto o interruptor quanto o notificador
 * Avisa quando a fruta é despawnada/coletada
 
-<h2>Fotos do notificador em jogo:</h2>
+<h2>Fotos do notificador e interruptor em jogo:</h2>
 
-em breve...
+![Notificador em jogo e interruptor](https://github.com/euyogi/Prototipo-YogiNotificadorFruta/assets/46427886/2322d6c5-ef2c-417f-9157-6494577e62e2)
+
+Como você pode ver algumas frutas não aparecem o nome correto pois o nome é na verdade extraído do nome da textura da fruta e as vezes é o nome da fruta, as vezes é algo um pouco diferente mas dá para ter uma idéia, nesse caso é a Magma
 
 <h2>Como utilizar:</h2>
 
