@@ -83,10 +83,6 @@ local function enableNotifier(fruit)
     if not fruitAlive then
         textToNotifier("Fruta despawnada/coletada", 5)
     end
-
-    if not workspaceConnection then
-        textToNotifier("Notificador desligado com sucesso", 5)
-    end
 end
 
 -- Enables/disables the notifier when notifier switch is clicked
@@ -95,6 +91,8 @@ switch.Activated:Connect(function()
 	-- Enables/disables the workspace connection listening for children added 
 	if workspaceConnection then -- check if we are connected
 		switch.TextLabel.Text = "Notificador (OFF)"
+
+        textToNotifier("Notificador desligado com sucesso", 5)
 
 		workspaceConnection:Disconnect() -- disconnect the event and stop the listening
 		workspaceConnection = nil -- clear the variable
@@ -121,4 +119,4 @@ switch.Activated:Connect(function()
     end
 end)
 
-textToNotifier("Script carregado com sucesso", 5)
+textToNotifier("Script ativado com sucesso", 5)
