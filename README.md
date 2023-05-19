@@ -6,7 +6,7 @@ Basicamente permite ao jogador localizar frutas facilmente, mesma função do <a
 
 <h2>Funcionalidades:</h2>
 
-* Mostra o nome a distância da fruta
+* Mostra o nome e a distância da fruta
 * Possui interruptor para ativar e desativar o notificador
 * Segue o mesmo design do jogo, tanto o interruptor quanto o notificador
 * Avisa quando a fruta é despawnada/coletada
