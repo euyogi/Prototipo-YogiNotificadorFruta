@@ -21,4 +21,4 @@ Utilizando um Roblox Executor como o <a href="https://evonexecutor.net/">Evon</a
 
 <b>Não me responsabilizo pelas consequências ao usuário, devido ao uso do script junto a um injetor em jogos do Roblox que não sejam de sua autoria. Visto que, pode não ser permitido pela empresa/criador.</b>
 
-<a href="https://github.com/euyogi/Prototipo-YogiRESP/releases/download/permanent/YogiRESP.txt">Baixe aqui</a>
+<a href="https://github.com/euyogi/Prototipo-YogiNotificadorFruta/releases/download/Download-here/YogiNotificadorFrutas.txt">Baixe aqui</a>
