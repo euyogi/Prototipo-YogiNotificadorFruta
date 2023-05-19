@@ -38,6 +38,15 @@ local notifier = player.PlayerGui.Main.Radar
 -- Variable to keep the connection, so after we can disconnect when click the switch
 local workspaceConnection
 
+local function textToNotifier(text, time)
+    notifier.Text = text
+    notifier.Visible = true
+
+    wait(time)
+
+    notifier.Visible = false
+end
+
 -- To be called when a fruit spawns
 local function enableNotifier(fruit)
 	local fruitName = "Uma fruta"
@@ -61,7 +70,7 @@ local function enableNotifier(fruit)
     local fruitAlive = true
 
     while fruitAlive and workspaceConnection do
-        notifier.Text = fruitName .. " encontrada a: " .. math.floor(((workspace.Characters.LocalPlayer.UpperTorso.Position - fruit.Position).Magnitude) * 0.28) .. "m"
+        notifier.Text = fruitName .. " encontrada à: " .. math.floor(((player.Character.UpperTorso.Position - fruit.Position).Magnitude) * 0.28) .. "m"
 
         wait(0.5)
 
@@ -69,21 +78,17 @@ local function enableNotifier(fruit)
     end
 
     if not fruitAlive then
-        notifier.Text = "Fruta despawnada/coletada"
+        textToNotifier("Fruta despawnada/coletada", 5)
     end
 
     if not workspaceConnection then
-        notifier.Text = "Notificador desligado com sucesso"
+        textToNotifier("Notificador desligado com sucesso", 5)
     end
-
-    wait(10)
-
-    notifier.Visible = false
 end
 
 -- Enables/disables the ESP when ESP switch is clicked
 switch.Activated:Connect(function()
-
+    
 	-- Enables/disables the workspace connection listening for children added 
 	if workspaceConnection then -- check if we are connected
 		switch.TextLabel.Text = "Notificador (OFF)"
@@ -110,3 +115,5 @@ switch.Activated:Connect(function()
         enableNotifier(fruit)
     end
 end)
+
+textToNotifier("Script ativado com sucesso", 5)
