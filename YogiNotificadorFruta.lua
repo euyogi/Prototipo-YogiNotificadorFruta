@@ -99,7 +99,8 @@ switch.Activated:Connect(function()
 	else -- if the connection does not exist
 		switch.TextLabel.Text = "Notificador (ON)"
 		
-			textToNotifier("Notificador ativado com sucesso", 3)
+		textToNotifier("Notificador ativado com sucesso", 3)
+			
 		-- Connect the event and start the listening
 		workspaceConnection = workspace.ChildAdded:Connect (function(child)
 			-- If the added child is a fruit enables the notifier
