@@ -69,8 +69,8 @@ local function enableNotifier(fruit)
 
     local fruitAlive = true
 
-    -- Fruit hasn't a position but it's child named "Fruit" has
-    local fruitChild = fruit:FindFirstChild("Fruit")
+    -- Fruit hasn't a position but it's children has
+    local fruitChild = fruit:FindFirstChildOfClass("MeshPart")
 	
     while fruitAlive and workspaceConnection do
         notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
