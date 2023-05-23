@@ -49,7 +49,7 @@ end
 
 -- To be called when a fruit spawns
 local function enableNotifier(fruit)
-	local fruitName = "Uma fruta"
+	local fruitName = "UMA FRUTA "
 
 	task.wait(1) -- Wait for children to born (I think that fixes most fruits spawning without name)
 
@@ -59,7 +59,14 @@ local function enableNotifier(fruit)
 			local i, j = string.find(descendant.Name, "_") -- Gets the index of "_"
 
 			fruitName = string.sub(descendant.Name, 8, i - 1) -- Keep the fruit name after "Meshes/" and before "_"
-			fruitName = "Fruta " .. fruitName:gsub("^%l", string.upper)
+
+            if fruitName == "MAGU" then
+                fruitName = "Magma"
+            else if fruitName == "Revive1" then
+                fruitName = "Revive"
+            end
+
+			fruitName = "FRUTA " .. string.upper(fruitName)
 
 			break
 		end
@@ -73,7 +80,7 @@ local function enableNotifier(fruit)
     local fruitChild = fruit:FindFirstChildOfClass("Part")
 	
     while fruitAlive and workspaceConnection do
-        notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
+        notifier.Text = fruitName .. " ENCONTRADA À: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
 
         task.wait(0.2)
 
