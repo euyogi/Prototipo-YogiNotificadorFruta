@@ -75,7 +75,7 @@ local function enableNotifier(fruit)
     while fruitAlive and workspaceConnection do
         notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
 
-        task.wait(0.5)
+        task.wait(0.2)
 
         fruitAlive = workspace:FindFirstChild(fruit.Name)
     end
