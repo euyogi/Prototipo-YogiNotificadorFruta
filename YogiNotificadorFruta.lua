@@ -16,7 +16,7 @@ local function createSwitch()
 
     -- Shows/hide the switch when settings image button is clicked
     settings.Activated:Connect(function()
-        if (switch.Visible) then
+        if switch.Visible then
             switch.Visible = false
         else
             switch.Visible = true
@@ -62,7 +62,7 @@ local function enableNotifier(fruit)
 
             if fruitName == "MAGU" then
                 fruitName = "Magma"
-            else if fruitName == "Revive1" then
+            elseif fruitName == "Revive1" then
                 fruitName = "Revive"
             end
 
