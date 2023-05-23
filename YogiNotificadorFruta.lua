@@ -70,7 +70,7 @@ local function enableNotifier(fruit)
     local fruitAlive = true
 
     -- Fruit hasn't a position but it's children has
-    local fruitChild = fruit:FindFirstChildOfClass("MeshPart")
+    local fruitChild = fruit:FindFirstChildOfClass("Part")
 	
     while fruitAlive and workspaceConnection do
         notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
@@ -94,10 +94,10 @@ switch.Activated:Connect(function()
 	if workspaceConnection then -- check if we are connected
 		switch.TextLabel.Text = "Notificador (OFF)"
 
-        	textToNotifier("Notificador desligado com sucesso", 5)
-
 		workspaceConnection:Disconnect() -- disconnect the event and stop the listening
 		workspaceConnection = nil -- clear the variable
+			
+		textToNotifier("Notificador desligado com sucesso", 5)
 
 	else -- if the connection does not exist
 		switch.TextLabel.Text = "Notificador (ON)"
