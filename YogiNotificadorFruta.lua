@@ -81,14 +81,12 @@ local function enableNotifier(fruit)
     local fruitChild = fruit:FindFirstChildOfClass("Part")
 	
     while fruitAlive and workspaceConnection do
-        notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character.UpperTorso.Position - fruitChild.Position).Magnitude * 0.15) .. "m"
+        notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character:WaitForChild("UpperTorso").Position - fruitChild.Position).Magnitude * 0.15) .. "m"
 
         task.wait(0.2)
 
         fruitAlive = workspace:FindFirstChild(fruit.Name)
     end
-	
-    notifier.Visible = false
 	
     if not fruitAlive then
         textToNotifier("Fruta despawnada/coletada", 5)
