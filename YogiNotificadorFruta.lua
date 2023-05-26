@@ -60,10 +60,12 @@ local function enableNotifier(fruit)
 
 			fruitName = string.sub(descendant.Name, 8, i - 1) -- Keep the fruit name after "Meshes/" and before "_"
 
-            if fruitName == "MAGU" then
+            if string.lower(fruitName) == "magu" then
                 fruitName = "Magma"
-            elseif fruitName == "smouke" then
+            elseif string.lower(fruitName) == "smouke" then
                 fruitName = "Smoke"
+            elseif string.lower(fruitName) == "quaketest" then
+                fruitName = "Quake"
             end
 
 			fruitName = "Fruta " .. fruitName:gsub("^%l", string.upper)
