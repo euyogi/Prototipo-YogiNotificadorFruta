@@ -104,7 +104,9 @@ switch.Activated:Connect(function()
 
 		workspaceConnection:Disconnect() -- disconnect the event and stop the listening
 		workspaceConnection = nil -- clear the variable
-			
+		
+		task.wait(2)
+		
 		textToNotifier("Notificador desligado com sucesso", 5)
 
 	else -- if the connection does not exist
