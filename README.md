@@ -1,6 +1,6 @@
 # Prototipo-YogiNotificadorFruta
 
-Quando uma fruta spawna mostra acima dos seus itens/frutas o nome da fruta e a distância dela.
+Quando uma fruta spawna mostra acima da sua hotbar o nome da fruta e a distância dela.
 
 Basicamente permite ao jogador localizar frutas facilmente, mesma função do <a href="https://blox-fruits.fandom.com/wiki/Fruit_Notifier">Notificador de Frutas</a> da loja de 2700 Robux.
 
