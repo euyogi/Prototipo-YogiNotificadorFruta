@@ -129,4 +129,5 @@ switch.Activated:Connect(function()
 	end
 end)
 
-textToNotifier("Script ativado com sucesso", 5)
+textToNotifier("Script ativado com sucesso", 4)
+textToNotifier("Ative o notificador no menu engrenagem", 4)
