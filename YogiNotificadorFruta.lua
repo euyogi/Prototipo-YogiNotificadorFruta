@@ -51,7 +51,8 @@ end
 local function enableNotifier(fruit)
 	local fruitName = "Uma fruta"
 
-	task.wait(1) -- Wait for children to born (I think that fixes most fruits spawning without name)
+	-- Fruit hasn't a position but it's children has
+    local fruitChild = fruit:WaitForChild("Fruit") -- Wait for children to born (I think this also fixes some fruits spawning without name)
 
 	-- The MeshPart is a children of the fruit and the name is like Meshes/fruitsname_34
 	for __, descendant in ipairs(fruit:GetChildren()) do -- Iterates over fruit's children
@@ -78,9 +79,6 @@ local function enableNotifier(fruit)
     notifier.Visible = true
 
     local fruitAlive = true
-
-    -- Fruit hasn't a position but it's children has
-    local fruitChild = fruit:FindFirstChildOfClass("Part")
 	
     while fruitAlive and workspaceConnection do
         notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character:WaitForChild("UpperTorso").Position - fruitChild.Position).Magnitude * 0.15) .. "m"
