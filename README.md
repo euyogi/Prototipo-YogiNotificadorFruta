@@ -15,7 +15,7 @@ Basicamente permite ao jogador localizar frutas facilmente, mesma função do <a
 
 ![Notificador em jogo e interruptor](https://github.com/euyogi/Prototipo-YogiNotificadorFruta/assets/46427886/a9908ff5-194a-4391-b091-5a53d8161aa2)
 
-Como você pode ver é extremamente similar ao original, só mudei para poder saber o nome das frutas, embora nem todas apareçam (as que não aparecem irá aparecer apenas "uma fruta encontrada...") pelo que vi algumas frutas que aparecem nome são por exemplo a borracha, spider, phoenix, venom. Mas muitas aparecem o nome corretamente.
+Como você pode ver é extremamente similar ao original, só mudei para poder saber o nome das frutas, embora nem todas apareçam (as que não aparecem irá aparecer apenas "uma fruta encontrada...") pelo que vi algumas frutas que não aparecem o nome são por exemplo a rubber, spider, phoenix, dough, venom. Mas muitas aparecem o nome corretamente.
 
 <h2>Como utilizar:</h2>
 
