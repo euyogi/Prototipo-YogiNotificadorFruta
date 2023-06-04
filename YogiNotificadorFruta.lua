@@ -52,7 +52,7 @@ local function enableNotifier(fruit)
 	local fruitName = "Uma fruta"
 
 	-- Fruit hasn't a position but it's children has
-    local fruitChild = fruit:WaitForChild("Fruit") -- Wait for children to born (I think this also fixes some fruits spawning without name)
+    local fruitChild = fruit:WaitForChild("Handle") -- Wait for children to born (I think this also fixes some fruits spawning without name)
 
 	-- The MeshPart is a children of the fruit and the name is like Meshes/fruitsname_34
 	for __, descendant in ipairs(fruit:GetChildren()) do -- Iterates over fruit's children
