@@ -5,7 +5,7 @@ local function createLed()
 	local led = Instance.new("Frame")
 	
 	led.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	led.BackgroundTransparency = 0.8
+	led.BackgroundTransparency = 0.3
 	led.Position = UDim2.new(0.125, 0, 0.375, 0)
 	led.Size = UDim2.new(0, 8, 0, 8)
 	led.Name = "NotifierLed"
