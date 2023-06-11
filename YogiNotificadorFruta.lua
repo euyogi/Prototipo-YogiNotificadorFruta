@@ -6,7 +6,7 @@ local function createLed()
 	
 	led.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	led.BackgroundTransparency = 0.3
-	led.Position = UDim2.new(0.125, 0, 0.375, 0)
+	led.Position = UDim2.new(1.3, 0, 0.3, 0)
 	led.Size = UDim2.new(0, 8, 0, 8)
 	led.Name = "NotifierLed"
 	
@@ -22,7 +22,7 @@ local function createLed()
 		end
 	end)
 	
-	led.Parent = player.PlayerGui.Main
+	led.Parent = player.PlayerGui.Main.Code
 
 	return led	
 end
