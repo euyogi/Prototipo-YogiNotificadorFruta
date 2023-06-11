@@ -6,7 +6,7 @@ local function createLed()
 	
 	led.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	led.BackgroundTransparency = 0.3
-	led.Position = UDim2.new(1.3, 0, 0.4, 0)
+	led.Position = UDim2.new(1.3, 0, 0.35, 0)
 	led.Size = UDim2.new(0, 8, 0, 8)
 	led.Name = "NotifierLed"
 	
