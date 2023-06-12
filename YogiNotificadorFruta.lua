@@ -1,5 +1,16 @@
 local player = game.Players.LocalPlayer
 
+local function playDing()
+	local sound = Instance.new("Sound", workspace)
+	sound.SoundId = "rbxassetid://3997124966"
+	sound.Volume = 8
+	sound:Play()
+
+	sound.Ended:Connect(function()
+		sound:Destroy()
+	end)
+end
+
 -- Little colored dot
 local function createLed()
 	local led = Instance.new("Frame")
@@ -78,6 +89,8 @@ end
 
 -- To be called when a fruit spawns
 local function enableNotifier(fruit)
+	playDing()
+
 	local fruitName = "Uma fruta"
 
 	-- Fruit hasn't a position but it's children has
