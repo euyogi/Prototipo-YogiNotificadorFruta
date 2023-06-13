@@ -3,7 +3,7 @@ local player = game.Players.LocalPlayer
 local function playDing()
 	local sound = Instance.new("Sound", workspace)
 	sound.SoundId = "rbxassetid://3997124966"
-	sound.Volume = 8
+	sound.Volume = 1
 	sound:Play()
 
 	sound.Ended:Connect(function()
