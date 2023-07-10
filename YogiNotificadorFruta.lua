@@ -1,5 +1,17 @@
 local player = game.Players.LocalPlayer
+local notifier = player.PlayerGui.Main.Radar
 
+-- Displays text on the same label that we use to locate fruits (notifier)
+local function showText(text, time)
+	notifier.Text = text
+	notifier.Visible = true
+
+	task.wait(time)
+
+	notifier.Visible = false
+end
+
+-- Plays sound (like when a fruit spawn)
 local function playDing()
 	local sound = Instance.new("Sound", workspace)
 	sound.SoundId = "rbxassetid://3997124966"
@@ -11,7 +23,7 @@ local function playDing()
 	end)
 end
 
--- Little colored dot
+-- Little colored dot (green = on / red = off)
 local function createLed()
 	local led = Instance.new("Frame")
 	
@@ -42,14 +54,14 @@ end
 local function createSwitch()
 	local switch
 
-	-- The settings image button at the right on Blox Fruits
+	-- The Blox Fruits settings image button at the right
 	local settings = player.PlayerGui.Main.Settings
 
-	-- Creates the notifier switch by making a copy of an existent switch
+	-- Creates the notifier switch by making a copy of an existent Blox Fruits switch
 	switch = settings.DmgCounterButton:Clone()
-	switch.Notify.Text = "Mostra a localização das frutas spawnadas"
+	switch.Notify.Text = "Mostra a localizacao das frutas spawnadas"
 	switch.Position = UDim2.new(-1.2, 0, -4.03, 0) -- Above counter switch
-	switch.Size = UDim2.new(5, 0, 0.8, 0) -- Similar size to the other switchs
+	switch.Size = UDim2.new(5, 0, 0.8, 0) -- Similar size to other switchs
 	switch.Name = "NotifierSwitch"
 	switch.TextLabel.Text = "Notificador (DESATIVADO)"
 	switch.Parent = settings
@@ -66,43 +78,24 @@ local function createSwitch()
 	return switch
 end
 
--- Creates the led to show if notifier is on/off
-local led = createLed()
-
--- Creates the switch to turn the notifier on/off
-local switch = createSwitch()
-
--- Creates the notifier
-local notifier = player.PlayerGui.Main.Radar
-
--- Variable to keep the connection, so after we can disconnect when click the switch
+-- To store the connection, so after we can disconnect on switch click (also used to check switch state)
 local workspaceConnection
-
-local function textToNotifier(text, time)
-	notifier.Text = text
-	notifier.Visible = true
-
-	task.wait(time)
-
-	notifier.Visible = false
-end
 
 -- To be called when a fruit spawns
 local function enableNotifier(fruit)
-	playDing()
-
 	local fruitName = "Uma fruta"
 
 	-- Fruit hasn't a position but it's children has
-	local fruitChild = fruit:WaitForChild("Handle") -- Wait for children to born (I think this also fixes some fruits spawning without name)
+	local fruitChild = fruit:WaitForChild("Handle")
 
-	-- The MeshPart is a children of the fruit and the name is like Meshes/fruitsname_34
+	-- The MeshPart is a children of the fruit and the name is like Meshes/fruitsname_34 so we need to extract only the name
 	for __, descendant in ipairs(fruit:GetChildren()) do -- Iterates over fruit's children
 		if descendant:IsA("MeshPart") and string.sub(descendant.Name, 1, 7) == "Meshes/" then -- Spawned fruits have their name on a MeshPart
-			local i, j = string.find(descendant.Name, "_") -- Gets the index of "_"
+			local i, j = string.find(descendant.Name, '_') -- Gets the index of '_'
 
-			fruitName = string.sub(descendant.Name, 8, i - 1) -- Keep the fruit name after "Meshes/" and before "_"
+			fruitName = string.sub(descendant.Name, 8, i - 1) -- Keep the fruit name after "Meshes/" and before '_'
 
+			-- Fixing some names
 			if string.lower(fruitName) == "magu" then
 				fruitName = "Magma"
 			elseif string.lower(fruitName) == "smouke" then
@@ -112,18 +105,19 @@ local function enableNotifier(fruit)
 			end
 
 			fruitName = "Fruta " .. fruitName:gsub("^%l", string.upper)
-			fruitName = fruitName:gsub("%d+", "")
+			fruitName = fruitName:gsub("%d+", '') -- Removes numbers from string
 
 			break
 		end
 	end
 
+	playDing()
 	notifier.Visible = true
-
 	local fruitAlive = true
 
+	-- Keeps updating the distance if fruit is alive and switch is on
 	while fruitAlive and workspaceConnection do
-		notifier.Text = fruitName .. " encontrada à: " .. math.floor((player.Character:WaitForChild("UpperTorso").Position - fruitChild.Position).Magnitude * 0.15) .. "m"
+		notifier.Text = fruitName .. " encontrada a: " .. math.floor((player.Character:WaitForChild("UpperTorso").Position - fruitChild.Position).Magnitude * 0.15) .. 'm'
 
 		task.wait(0.2)
 
@@ -131,13 +125,14 @@ local function enableNotifier(fruit)
 	end
 
 	if not fruitAlive then
-		textToNotifier("Fruta despawnada/coletada", 5)
+		showText("Fruta despawnada/coletada", 4)
 	end
 end
 
--- Enables/disables the notifier when notifier switch is clicked
-switch.Activated:Connect(function()
+local led = createLed()
+local switch = createSwitch()
 
+local function onSwitchClick()
 	-- Enables/disables the workspace connection listening for children added 
 	if workspaceConnection then -- check if we are connected
 		switch.TextLabel.Text = "Notificador (DESATIVADO)"
@@ -146,30 +141,37 @@ switch.Activated:Connect(function()
 		workspaceConnection:Disconnect() -- disconnect the event and stop the listening
 		workspaceConnection = nil -- clear the variable
 
-		textToNotifier("Notificador desligado com sucesso", 5)
+		showText("Notificador desligado com sucesso", 4)
 
 	else -- if the connection does not exist
 		switch.TextLabel.Text = "Notificador (ATIVADO)"
 		led.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		
-		textToNotifier("Notificador ativado com sucesso", 5)
+		showText("Notificador ativado com sucesso", 4)
 
 		-- Connect the event and start the listening
 		workspaceConnection = workspace.ChildAdded:Connect (function(child)
 			-- If the added child is a fruit enables the notifier
-			if child.Name == "Fruit " then
+			if child.Name == "Fruit " then -- Intended space
 				enableNotifier(child)
 			end
 		end)
 
-		-- Gets a fruit and enable notifier if it already spawned
-		local fruit = workspace:FindFirstChild("Fruit ")
+		-- Looks for an already spawned fruit and enable notifier if there's one
+		local fruit = workspace:FindFirstChild("Fruit ") -- Intended space
 
 		if fruit then
 			enableNotifier(fruit)
 		end
 	end
-end)
+end
 
-textToNotifier("Script ativado com sucesso", 4)
-textToNotifier("Ative o notificador no menu engrenagem", 4)
+showText("Script ativado com sucesso", 4)
+
+-- Enables the notifier on startup by simulating a switch click
+onSwitchClick()
+
+-- Enables/disables the notifier when notifier switch is clicked
+switch.Activated:Connect(onSwitchClick)
+
+-- euyogi
