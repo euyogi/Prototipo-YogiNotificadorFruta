@@ -19,7 +19,7 @@ Como você pode ver é extremamente similar ao original, só mudei para poder sa
 
 <h2>Como utilizar:</h2>
 
-Utilizando um Roblox Executor como o <a href="https://waterx.download/">Water X</a> (PC), ou o <a href="https://fluxteam.net/">Fluxus</a> (Mobile/PC), o executor fica a sua escolha, você pode colar o arquivo na pasta scripts do executor ou copiar o texto do arquivo e colar nele e então, entre no jogo, injete o executor e inicie o script, um interruptor on/off vai aparecer junto aos do jogo (quando aperta no ícone de engrenagem à esquerda).
+Utilizando um Roblox Executor como o <a href="https://deltaexploits.net/">Delta</a>, ou o <a href="https://fluxteam.net/">Fluxus</a>, o executor fica a sua escolha, você pode colar o arquivo na pasta scripts do executor ou copiar o texto do arquivo e colar nele e então, entre no jogo, injete o executor e inicie o script, um interruptor on/off vai aparecer junto aos do jogo (quando aperta no ícone de engrenagem à esquerda).
 
 <b>Não me responsabilizo pelas consequências ao usuário, devido ao uso do script junto a um injetor em jogos do Roblox que não sejam de sua autoria. Visto que, pode não ser permitido pela empresa/criador.</b>
 
