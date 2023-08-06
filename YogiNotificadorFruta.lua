@@ -179,8 +179,6 @@ local function onSwitchClick()
 			switch.TextLabel.Text = "Notifier (OFF)"
 			showText("Notifier disabled successfully", 2)
 		end
-		
-
 	else -- if the connection does not exist
 		led.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		
@@ -196,7 +194,7 @@ local function onSwitchClick()
 		workspace_connection = workspace.ChildAdded:Connect(function(child)
 			-- If the added child is a fruit enables the notifier
 			if child.Name == "Fruit " then -- Intended space
-				enableNotifier(child)
+				task.spawn(enableNotifier, child)
 			end
 		end)
 
@@ -204,7 +202,7 @@ local function onSwitchClick()
 		local fruit = workspace:FindFirstChild("Fruit ") -- Intended space
 
 		if fruit then
-			enableNotifier(fruit)
+			task.spawn(enableNotifier, fruit)
 		end
 	end
 end
