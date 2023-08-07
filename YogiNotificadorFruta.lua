@@ -12,11 +12,11 @@ local function showText(text, time)
 end
 
 -- Plays sound (like when a fruit spawn)
-local function playDing()
+local function playSound(asset_id, pb_speed)
 	local sound = Instance.new("Sound", workspace)
-	sound.SoundId = "rbxassetid://3997124966"
+	sound.SoundId = asset_id
 	sound.Volume = 1
-	sound.PlaybackSpeed = 4
+	sound.PlaybackSpeed = pb_speed
 	sound:Play()
 
 	sound.Ended:Connect(function()
@@ -130,12 +130,11 @@ local function enableNotifier(fruit)
 			end
 			
 			fruit_name = fruit_name:gsub("%d+", '') -- Removes numbers from string
-
 			break
 		end
 	end
 
-	playDing()
+	playSound("rbxassetid://3997124966", 4)
 	notifier.Visible = true
 	local fruit_alive = true
 
@@ -148,11 +147,11 @@ local function enableNotifier(fruit)
 		end
 
 		task.wait(0.2)
-
 		fruit_alive = workspace:FindFirstChild(fruit.Name)
 	end
 
 	if not fruit_alive then
+		playSound("rbxassetid://4612375233", 1)
 		if (lang == "pt-br") then
 			showText("Fruta despawnada/coletada", 3)
 		else 
