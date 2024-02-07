@@ -6,7 +6,7 @@ Basicamente permite ao jogador localizar frutas facilmente, mesma função do <a
 
 <h2>Como utilizar:</h2>
 
-Primeiro você precisa de um Executor Roblox como o <a href="https://deltaexploits.net/">Delta</a>, ou o <a href="https://fluxteam.net/">Fluxus</a>, o executor fica a sua escolha.
+Primeiro você precisa de um Executor Roblox como o <a href="https://deltaexploits.net/">Delta</a>, <a href="https://evon.cc/">Evon</a> ou o <a href="https://fluxteam.net/">Fluxus</a> (Esses que listei podem não estar mais funcionando, nesse caso, recomendo tentar pesquisar executores atuais), o executor fica a sua escolha.
 
 Depois você pode ou baixar e colar <a href="https://github.com/euyogi/Prototipo-YogiNotificadorFruta/releases/download/Download-here/YogiNotificadorFrutas.txt">este arquivo</a> na pasta scripts do executor ou apenas copiar o texto do arquivo:
 
