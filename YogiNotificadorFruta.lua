@@ -1,5 +1,5 @@
 local local_player = game.Players.LocalPlayer
-local notifier = local_player.PlayerGui:WaitForChild("Main"):WaitForChild("Radar")
+local notifier = local_player.PlayerGui:WaitForChild("Main"):WaitForChild("[OLD]Radar")
 
 -- Displays text on the same label that we use to locate fruits (notifier)
 local function showText(text, time)
