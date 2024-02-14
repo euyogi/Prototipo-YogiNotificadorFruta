@@ -34,4 +34,8 @@ e colar no executor, depois entre no jogo, injete o executor e inicie o script.
 
 Como você pode ver é extremamente similar ao original, só mudei para poder saber o nome das frutas, embora nem todas apareçam (as que não aparecem irá aparecer apenas "uma fruta encontrada...") pelo que vi algumas frutas que não aparecem o nome são por exemplo a rubber, gravity, spider, phoenix, dough, venom, dragon. Mas muitas outras, principalmente as mais comuns aparecem o nome corretamente, assim você não precisa ficar pegando todas apenas as que você não tem e as que não mostra o nome.
 
+<p align="center">
+  Feito por: Yogi Nam de Souza Barbosa
+</p>
+
 <img alt="Footer" width=100% src="https://capsule-render.vercel.app/api?type=waving&color=ffcc00&height=100&section=footer">
