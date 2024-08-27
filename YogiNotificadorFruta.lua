@@ -10,8 +10,8 @@ local notifier_disabled = "Notifier disabled successfully"
 local description = "Shows spawned fruits location"
 local on = "Notifier (ON)"
 local off = "Notifier (OFF)"
-local location = "A fruit found at "
-local magnitude = "m away"
+local location = "FRUIT DETECTED: "
+local magnitude = "m away."
 local collected = "Fruit despawned/collected"
 
 if (game:GetService("LocalizationService").RobloxLocaleId == "pt-br") then
@@ -21,15 +21,14 @@ if (game:GetService("LocalizationService").RobloxLocaleId == "pt-br") then
     description = "Mostra a localizacao das frutas spawnadas"
     on = "Notificador (ATIVADO)"
     off = "Notificador (DESATIVADO)"
-    location = "Uma fruta encontrada a "
-    magnitude = "m"
+    location = "FRUTA DETECTADA: "
+    magnitude = "m de distancia."
     collected = "Fruta despawnada/coletada"
 end
 
 -- if executed twice or more
 if codes_button:FindFirstChild("NotifierLed") then
-    codes_button.NotifierLed:Destroy()
-    settings_button.NotifierSwitch:Destroy()
+    return
 end
 
 -- creates led to indicate notifier status
