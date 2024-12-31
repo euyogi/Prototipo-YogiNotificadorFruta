@@ -4,26 +4,28 @@ local gui = player:WaitForChild("PlayerGui")
 local label = gui:WaitForChild("[OLD]Radar")
 local codes_button = gui:WaitForChild("Code")
 local settings_button = gui:WaitForChild("Settings")
-local script_enabled = "Script enabled successfully"
-local notifier_enabled = "Notifier enabled successfully"
-local notifier_disabled = "Notifier disabled successfully"
-local description = "Shows spawned fruits location"
+local dmg_counter_button = settings_button:WaitForChild("Buttons")
+    :WaitForChild("DmgCounterButton")
+local script_enabled = "Script enabled successfully."
+local notifier_enabled = "Notifier enabled successfully."
+local notifier_disabled = "Notifier disabled successfully."
+local description = "Shows spawned fruits location."
 local on = "Notifier (ON)"
 local off = "Notifier (OFF)"
 local location = "FRUIT DETECTED: "
 local magnitude = "m away."
-local collected = "Fruit despawned/collected"
+local collected = "Fruit despawned/collected."
 
 if (game:GetService("LocalizationService").RobloxLocaleId == "pt-br") then
-    script_enabled = "Script ativado com sucesso"
-    notifier_enabled = "Notificador ativado com sucesso"
-    notifier_disabled = "Notificador desativado com sucesso"
-    description = "Mostra a localizacao das frutas spawnadas"
+    script_enabled = "Script ativado com sucesso."
+    notifier_enabled = "Notificador ativado com sucesso."
+    notifier_disabled = "Notificador desativado com sucesso."
+    description = "Mostra a localização das frutas spawnadas."
     on = "Notificador (ATIVADO)"
     off = "Notificador (DESATIVADO)"
     location = "FRUTA DETECTADA: "
-    magnitude = "m de distancia."
-    collected = "Fruta despawnada/coletada"
+    magnitude = "m de distância."
+    collected = "Fruta despawnada/coletada."
 end
 
 -- if executed twice or more
@@ -43,16 +45,14 @@ local border = Instance.new("UICorner", led)
 border.CornerRadius = UDim.new(1)
 
 -- creates notifier switch by making a copy of an existent blox fruits switch
-local switch = settings_button:WaitForChild("DmgCounterButton"):Clone()
+local switch = dmg_counter_button:Clone()
 switch.Notify.Text = description
 switch.TextLabel.Text = off
-switch.Position = UDim2.new(-1.2, 0, -4.03, 0) -- above counter switch
-switch.Size = UDim2.new(5, 0, 0.8, 0)          -- similar size to other switchs
 switch.Name = "NotifierSwitch"
-switch.Parent = settings_button
+switch.Parent = dmg_counter_button.Parent
 
 settings_button.Activated:Connect(function()
-    switch.Visible = not switch.Visible
+    switch.Visible = dmg_counter_button.Visible
 end)
 
 -- stores the connection, so after we can disconnect
